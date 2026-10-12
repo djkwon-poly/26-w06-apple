@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f7f1">
+    <title>사과게임</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="topbar">
+        <a class="wordmark" href="index.html" aria-label="사과게임 홈">
+          <span class="wordmark-icon" aria-hidden="true">10</span>
+          <span>사과게임</span>
+        </a>
+        <span class="edition-label">NUMBER PUZZLE <span aria-hidden="true">/</span> 01</span>
+      </header>
+
+      <section class="game-layout" aria-labelledby="game-title">
+        <div class="play-area">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">60-SECOND CHALLENGE</p>
+              <h1 id="game-title">숫자를 잇고,<br>10을 넘겨라.</h1>
+            </div>
+            <span class="board-size" aria-label="8 곱하기 8 격자">8 <span>×</span> 8</span>
+          </div>
+
+          <div class="board-wrap">
+            <div id="game-board" class="game-board" role="group" aria-label="숫자 게임 보드" aria-describedby="game-instructions"></div>
+          </div>
+          <p id="game-instructions" class="instructions">상하좌우로 이어진 숫자를 드래그하세요. 합이 10의 배수일 때 점수를 얻어요.</p>
+        </div>
+
+        <aside class="score-panel" aria-label="게임 정보">
+          <div class="timer-block">
+            <p class="eyebrow">남은 시간</p>
+            <p id="timer" class="timer" aria-live="off">01:00</p>
+            <div id="timer-track" class="timer-track" role="progressbar" aria-label="남은 시간" aria-valuemin="0" aria-valuemax="60" aria-valuenow="60">
+              <span id="timer-fill"></span>
+            </div>
+          </div>
+
+          <div class="score-row">
+            <span>현재 점수</span>
+            <strong id="score">0</strong>
+          </div>
+          <div class="score-row best-row">
+            <span>최고 점수</span>
+            <strong id="best-score">0</strong>
+          </div>
+
+          <div class="selection-readout" aria-live="polite">
+            <span class="readout-label">선택 합계</span>
+            <strong id="selection-sum">0</strong>
+          </div>
+          <p id="game-status" class="game-status" aria-live="polite">시작을 누르고 숫자를 이어보세요.</p>
+          <button id="start-button" class="start-button" type="button">
+            <span>게임 시작</span>
+            <span class="button-arrow" aria-hidden="true">↗</span>
+          </button>
+          <p class="best-note">최고 점수는 이 기기에 저장됩니다.</p>
+        </aside>
+      </section>
+
+      <footer class="page-footer">
+        <span>한 번에 더 많이 연결할수록 큰 점수!</span>
+        <span>01 — 60 SEC</span>
+      </footer>
+    </main>
+    <div id="confetti-layer" class="confetti-layer" aria-hidden="true"></div>
+  </body>
+</html>
